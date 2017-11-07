@@ -1,0 +1,44 @@
+{
+  "name": "openweathermap-apis",
+  "description": "An abstraction layer for the openweathermap.org APIs",
+  "keywords": [
+    "weather",
+    "openweathermap",
+    "openweathermap.org",
+    "openweather",
+    "API"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Steven Collins",
+    "email": "steven@carboncollins.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarbonCollins/openweathermap-nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CarbonCollins/openweathermap-nodejs/issues"
+  },
+  "devDependencies": {
+    "fs-extra": "^4.0.2",
+    "gulp": "^3.9.1",
+    "jsdoc-to-markdown": "^3.0.1"
+  },
+  "main": "./index.js",
+  "homepage": "https://github.com/CarbonCollins/openweathermap-nodejs",
+  "engines": {
+    "node": ">=4.x"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
