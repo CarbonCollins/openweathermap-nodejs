@@ -1,8 +1,14 @@
 # openweathermap-nodejs
 
-  An abstraction layer for the (openweathermap.org) APIs.
+[![GitHub issues](https://img.shields.io/github/issues/CarbonCollins/openweathermap-nodejs.svg?style=flat-square)](https://github.com/CarbonCollins/openweathermap-nodejs/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/CarbonCollins/openweathermap-nodejs/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/CarbonCollins/openweathermap-nodejs/all.svg?style=flat-square)]()
+[![David](https://img.shields.io/david/CarbonCollins/openweathermap-nodejs.svg?style=flat-square)]()
+[![David](https://img.shields.io/david/dev/CarbonCollins/openweathermap-nodejs.svg?style=flat-square)]()
 
-  Currently only the current weather, 5day, and 16day forcast apis have been added
+An abstraction layer for the (openweathermap.org) APIs.
+
+Currently only the current weather, 5day, and 16day forcast apis have been added
 
 ## install
 
