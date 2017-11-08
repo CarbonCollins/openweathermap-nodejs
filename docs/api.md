@@ -12,6 +12,9 @@
 <dt><a href="#RequestParameters">RequestParameters</a> : <code>Object</code></dt>
 <dd><p>an object of optional parameters used for determining where the weather should be retreived for</p>
 </dd>
+<dt><a href="#Coordinate">Coordinate</a> : <code>Object</code></dt>
+<dd><p>a coordinate object containing a longitute and latitude for positioning</p>
+</dd>
 </dl>
 
 <a name="module_OpenWeatherMap"></a>
@@ -22,14 +25,11 @@ An abstraction layer for accessing the various OpenWeatherMap APIs.
 **See**: [https://openweathermap.org/api](https://openweathermap.org/api)  
 
 * [OpenWeatherMap](#module_OpenWeatherMap)
-    * _static_
-        * [.Weather](#module_OpenWeatherMap.Weather)
-            * [new Weather(options)](#new_module_OpenWeatherMap.Weather_new)
-            * [~now(params)](#module_OpenWeatherMap.Weather..now) ⇒ <code>Promise</code>
-            * [~forcast(params)](#module_OpenWeatherMap.Weather..forcast) ⇒ <code>Promise</code>
-            * [~dailyForcast(params)](#module_OpenWeatherMap.Weather..dailyForcast) ⇒ <code>Promise</code>
-    * _inner_
-        * [~Coordinate](#module_OpenWeatherMap..Coordinate) : <code>Object</code>
+    * [.Weather](#module_OpenWeatherMap.Weather)
+        * [new Weather(options)](#new_module_OpenWeatherMap.Weather_new)
+        * [~now(params)](#module_OpenWeatherMap.Weather..now) ⇒ <code>Promise</code>
+        * [~forcast(params)](#module_OpenWeatherMap.Weather..forcast) ⇒ <code>Promise</code>
+        * [~dailyForcast(params)](#module_OpenWeatherMap.Weather..dailyForcast) ⇒ <code>Promise</code>
 
 <a name="module_OpenWeatherMap.Weather"></a>
 
@@ -100,19 +100,6 @@ gets a daily forcast for up to 16 days in the future (paid accounts only)
 | --- | --- |
 | params | [<code>RequestParameters</code>](#RequestParameters) | 
 
-<a name="module_OpenWeatherMap..Coordinate"></a>
-
-### OpenWeatherMap~Coordinate : <code>Object</code>
-a coordinate object containing a longitute and latitude for positioning
-
-**Kind**: inner typedef of [<code>OpenWeatherMap</code>](#module_OpenWeatherMap)  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| latitude | <code>String</code> \| <code>Number</code> | the latitude of the position |
-| longitude | <code>String</code> \| <code>Number</code> | the longitude of the position |
-
 <a name="RequestParameters"></a>
 
 ## RequestParameters : <code>Object</code>
@@ -130,6 +117,19 @@ an object of optional parameters used for determining where the weather should b
 | zip | <code>String</code> \| <code>Number</code> | the zip code to use within the query (US by default unless country is specified) |
 | postcode | <code>String</code> \| <code>Number</code> | an alias to zip |
 | days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast) |
+
+<a name="Coordinate"></a>
+
+## Coordinate : <code>Object</code>
+a coordinate object containing a longitute and latitude for positioning
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| latitude | <code>String</code> \| <code>Number</code> | the latitude of the position |
+| longitude | <code>String</code> \| <code>Number</code> | the longitude of the position |
 
 <a name="parseParameters"></a>
 
