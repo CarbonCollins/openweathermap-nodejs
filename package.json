@@ -8,7 +8,7 @@
     "openweather",
     "API"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Steven Collins",
     "email": "steven@carboncollins.uk"
@@ -21,6 +21,8 @@
     "url": "https://github.com/CarbonCollins/openweathermap-nodejs/issues"
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.10.0",
     "fs-extra": "^4.0.2",
     "gulp": "^3.9.1",
     "jsdoc-to-markdown": "^3.0.1"
