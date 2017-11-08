@@ -113,7 +113,7 @@ an object of optional parameters used for determining where the weather should b
 | id | <code>String</code> \| <code>Number</code> | the city ID to use in the query (use on its own) |
 | city | <code>String</code> | the city name to use in the query e.g. 'london' (best used with country also set) |
 | country | <code>String</code> | the 2 letter country code to use in the query e.g. 'en' |
-| coordinates | <code>Coordianate</code> | a coordinate object used for searching based on latlon (use on its own) |
+| coordinates | [<code>Coordinate</code>](#Coordinate) | a coordinate object used for searching based on latlon (use on its own) |
 | zip | <code>String</code> \| <code>Number</code> | the zip code to use within the query (US by default unless country is specified) |
 | postcode | <code>String</code> \| <code>Number</code> | an alias to zip |
 | days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast) |
