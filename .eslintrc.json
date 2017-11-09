@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "env": {
+    "mocha": true,
+    "node":  true,
+    "es6":   true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "arrow-body-style": ["error", "always"],
+    "strict": [0, "global"]
+  }
+}
