@@ -116,7 +116,8 @@ an object of optional parameters used for determining where the weather should b
 | coordinates | [<code>Coordinate</code>](#Coordinate) | a coordinate object used for searching based on latlon (use on its own) |
 | zip | <code>String</code> \| <code>Number</code> | the zip code to use within the query (US by default unless country is specified) |
 | postcode | <code>String</code> \| <code>Number</code> | an alias to zip |
-| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast) |
+| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast alias for cnt) |
+| hours | <code>String</code> \| <code>Number</code> | number of hours to return in the forecast (used only in forecast alias for cnt) |
 
 <a name="Coordinate"></a>
 
