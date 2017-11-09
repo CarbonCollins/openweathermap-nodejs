@@ -28,8 +28,8 @@ An abstraction layer for accessing the various OpenWeatherMap APIs.
     * [.Weather](#module_OpenWeatherMap.Weather)
         * [new Weather(options)](#new_module_OpenWeatherMap.Weather_new)
         * [~now(params)](#module_OpenWeatherMap.Weather..now) ⇒ <code>Promise</code>
-        * [~forcast(params)](#module_OpenWeatherMap.Weather..forcast) ⇒ <code>Promise</code>
-        * [~dailyForcast(params)](#module_OpenWeatherMap.Weather..dailyForcast) ⇒ <code>Promise</code>
+        * [~forecast(params)](#module_OpenWeatherMap.Weather..forecast) ⇒ <code>Promise</code>
+        * [~dailyForecast(params)](#module_OpenWeatherMap.Weather..dailyForecast) ⇒ <code>Promise</code>
 
 <a name="module_OpenWeatherMap.Weather"></a>
 
@@ -40,8 +40,8 @@ An abstraction layer for accessing the various OpenWeatherMap APIs.
 * [.Weather](#module_OpenWeatherMap.Weather)
     * [new Weather(options)](#new_module_OpenWeatherMap.Weather_new)
     * [~now(params)](#module_OpenWeatherMap.Weather..now) ⇒ <code>Promise</code>
-    * [~forcast(params)](#module_OpenWeatherMap.Weather..forcast) ⇒ <code>Promise</code>
-    * [~dailyForcast(params)](#module_OpenWeatherMap.Weather..dailyForcast) ⇒ <code>Promise</code>
+    * [~forecast(params)](#module_OpenWeatherMap.Weather..forecast) ⇒ <code>Promise</code>
+    * [~dailyForecast(params)](#module_OpenWeatherMap.Weather..dailyForecast) ⇒ <code>Promise</code>
 
 <a name="new_module_OpenWeatherMap.Weather_new"></a>
 
@@ -72,10 +72,10 @@ gets the current weather at a location at the current time
 | --- | --- |
 | params | [<code>RequestParameters</code>](#RequestParameters) | 
 
-<a name="module_OpenWeatherMap.Weather..forcast"></a>
+<a name="module_OpenWeatherMap.Weather..forecast"></a>
 
-#### Weather~forcast(params) ⇒ <code>Promise</code>
-gets a forcast for the next 5 days in 3 hour intervals
+#### Weather~forecast(params) ⇒ <code>Promise</code>
+gets a forecast for the next 5 days in 3 hour intervals
 
 **Kind**: inner method of [<code>Weather</code>](#module_OpenWeatherMap.Weather)  
 **Returns**: <code>Promise</code> - the http request promise which will resolve with the 5 day forecast weather or reject with an error  
@@ -86,13 +86,13 @@ gets a forcast for the next 5 days in 3 hour intervals
 | --- | --- |
 | params | [<code>RequestParameters</code>](#RequestParameters) | 
 
-<a name="module_OpenWeatherMap.Weather..dailyForcast"></a>
+<a name="module_OpenWeatherMap.Weather..dailyForecast"></a>
 
-#### Weather~dailyForcast(params) ⇒ <code>Promise</code>
-gets a daily forcast for up to 16 days in the future (paid accounts only)
+#### Weather~dailyForecast(params) ⇒ <code>Promise</code>
+gets a daily forecast for up to 16 days in the future (paid accounts only)
 
 **Kind**: inner method of [<code>Weather</code>](#module_OpenWeatherMap.Weather)  
-**Returns**: <code>Promise</code> - the http request promise which will resolve with the 16 day forcast weather or reject with an error  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the 16 day forecast weather or reject with an error  
 **Access**: public  
 **See**: [https://openweathermap.org/forecast16](https://openweathermap.org/forecast16)  
 

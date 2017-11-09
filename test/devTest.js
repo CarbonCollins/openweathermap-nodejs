@@ -9,7 +9,7 @@ const open = new Weather({
 open.now({ city: 'london', country: 'uk' })
   .then((nowResult) => {
     console.log(JSON.stringify(nowResult, null, 2));
-    return open.forcast({ city: 'london', country: 'uk' });
+    return open.forecast({ city: 'london', country: 'uk' });
   })
   .then((forecastResult) => {
     console.log(JSON.stringify(forecastResult, null, 2));
