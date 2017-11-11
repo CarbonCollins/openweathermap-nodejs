@@ -15,6 +15,8 @@ const UVIndexMixin = require('./lib/uvIndex');
 /**
  * @class
  * @memberof module:OpenWeatherMap/api
+ * @desc contains the core functionality between all of the APIs such as request functions and key storage.
+ * This class is intended to be extended or have mixins applied to add the functionality of the different APIs
  */
 class OpenWeatherMap {
   /**
@@ -38,6 +40,7 @@ class OpenWeatherMap {
    * @param {String} uri the uri to send the request too
    * @param {Object} params
    * @returns {Promise} the http request promise
+   * @private
    */
   sendRequest(uri, params) {
     const options = {

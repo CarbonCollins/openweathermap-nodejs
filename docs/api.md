@@ -36,7 +36,6 @@ The OpenWeatherMap/api module acts as an abstraction layer for accessing the var
 * [OpenWeatherMap/api](#module_OpenWeatherMap/api)
     * [.OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap)
         * [new OpenWeatherMap(options)](#new_module_OpenWeatherMap/api.OpenWeatherMap_new)
-        * [~sendRequest(uri, params)](#module_OpenWeatherMap/api.OpenWeatherMap..sendRequest) ⇒ <code>Promise</code>
     * [.UVIndex](#module_OpenWeatherMap/api.UVIndex) ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
         * [new UVIndex()](#new_module_OpenWeatherMap/api.UVIndex_new)
         * [~UVIndex(params)](#module_OpenWeatherMap/api.UVIndex..UVIndex) ⇒ <code>Promise</code>
@@ -50,14 +49,11 @@ The OpenWeatherMap/api module acts as an abstraction layer for accessing the var
 
 ### OpenWeatherMap/api.OpenWeatherMap
 **Kind**: static class of [<code>OpenWeatherMap/api</code>](#module_OpenWeatherMap/api)  
-
-* [.OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap)
-    * [new OpenWeatherMap(options)](#new_module_OpenWeatherMap/api.OpenWeatherMap_new)
-    * [~sendRequest(uri, params)](#module_OpenWeatherMap/api.OpenWeatherMap..sendRequest) ⇒ <code>Promise</code>
-
 <a name="new_module_OpenWeatherMap/api.OpenWeatherMap_new"></a>
 
 #### new OpenWeatherMap(options)
+contains the core functionality between all of the APIs such as request functions and key storage.This class is intended to be extended or have mixins applied to add the functionality of the different APIs
+
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -66,19 +62,6 @@ The OpenWeatherMap/api module acts as an abstraction layer for accessing the var
 | [options.language] | <code>String</code> |  | an optional 2 letter language code e.g. 'en' |
 | [options.hostname] | <code>String</code> | <code>api.openweathermap.org</code> | an optional hostname for the api to connect to. |
 | [options.port] | <code>String</code> \| <code>Number</code> | <code>80</code> | an optional port to use for the api |
-
-<a name="module_OpenWeatherMap/api.OpenWeatherMap..sendRequest"></a>
-
-#### OpenWeatherMap~sendRequest(uri, params) ⇒ <code>Promise</code>
-builds and sends the request to the OpenWeatherMap API
-
-**Kind**: inner method of [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)  
-**Returns**: <code>Promise</code> - the http request promise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| uri | <code>String</code> | the uri to send the request too |
-| params | <code>Object</code> |  |
 
 <a name="module_OpenWeatherMap/api.UVIndex"></a>
 
@@ -187,8 +170,8 @@ an object of parameters used to identify a location using a citys ID
 | Name | Type | Description |
 | --- | --- | --- |
 | id | <code>String</code> \| <code>Number</code> | the city ID to be used in the query |
-| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast alias for cnt) |
-| hours | <code>String</code> \| <code>Number</code> | number of hours to return in the forecast (used only in forecast alias for cnt) |
+| days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
+| hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
 <a name="CityNameReqParams"></a>
 
@@ -201,9 +184,9 @@ an object of parameters used to identify a location using a citys name
 | Name | Type | Description |
 | --- | --- | --- |
 | city | <code>String</code> | the city name to use in the query e.g. 'london' (best used with country also set) |
-| country | <code>String</code> | the 2 letter country code to use in the query e.g. 'en' |
-| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast alias for cnt) |
-| hours | <code>String</code> \| <code>Number</code> | number of hours to return in the forecast (used only in forecast alias for cnt) |
+| country | <code>String</code> | optional 2 letter country code to use in the query e.g. 'en' |
+| days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
+| hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
 <a name="LatLonReqParams"></a>
 
@@ -216,8 +199,8 @@ an object of parameters used to identify a location using a citys name
 | Name | Type | Description |
 | --- | --- | --- |
 | coordinates | [<code>Coordinate</code>](#Coordinate) | a coordinate object used for searching based on latlon (use on its own) |
-| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast alias for cnt) |
-| hours | <code>String</code> \| <code>Number</code> | number of hours to return in the forecast (used only in forecast alias for cnt) |
+| days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
+| hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
 <a name="ZipReqParams"></a>
 
@@ -230,10 +213,10 @@ an object of parameters used to identify a location using a citys name
 | Name | Type | Description |
 | --- | --- | --- |
 | zip | <code>String</code> \| <code>Number</code> | the zip code to use within the query (US by default unless country is specified) |
-| postcode | <code>String</code> \| <code>Number</code> | an alias to zip |
-| country | <code>String</code> | the 2 letter country code to use in the query e.g. 'en' |
-| days | <code>String</code> \| <code>Number</code> | number of days to return in the forecast (used only in dailyForecast alias for cnt) |
-| hours | <code>String</code> \| <code>Number</code> | number of hours to return in the forecast (used only in forecast alias for cnt) |
+| postcode | <code>String</code> \| <code>Number</code> | an alias to zip (use either zip or postcode) |
+| country | <code>String</code> | optional 2 letter country code to use in the query e.g. 'en' |
+| days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
+| hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
 <a name="Coordinate"></a>
 
