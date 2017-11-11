@@ -2,6 +2,12 @@
 
 const { Weather } = require('../index');
 
+console.log(Weather);
+
+console.log(new Weather({
+  apiKey: '81b3d5ab1004c595c1448f478a558925',
+}));
+
 const open = new Weather({
   apiKey: '81b3d5ab1004c595c1448f478a558925',
 });
