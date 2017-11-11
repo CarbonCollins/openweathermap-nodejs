@@ -8,7 +8,7 @@
 
 An abstraction layer for the (openweathermap.org) APIs.
 
-Currently only the current weather, 5day, and 16day forecast apis have been added
+Currently only the current weather, 5day forecast, 16day forecast, and UV Index apis have been added
 
 ## install
 
