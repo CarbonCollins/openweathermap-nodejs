@@ -153,8 +153,8 @@ module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
  * @global
  * @description an object of parameters used to identify a location using a citys ID
  * @property {String|Number} id the city ID to be used in the query
- * @property {String|Number} [days] number of days to return in the forecast (used only in dailyForecast alias for cnt)
- * @property {String|Number} [hours] number of hours to return in the forecast (used only in forecast alias for cnt)
+ * @property {String|Number} [days] optional number of days to return in the forecast (used in dailyForecast alias for cnt)
+ * @property {String|Number} [hours] optional number of hours to return in the forecast (used in forecast alias for cnt)
  */
 
 /**
@@ -162,9 +162,9 @@ module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
  * @global
  * @description an object of parameters used to identify a location using a citys name
  * @property {String} city the city name to use in the query e.g. 'london' (best used with country also set)
- * @property {String} [country] the 2 letter country code to use in the query e.g. 'en'
- * @property {String|Number} [days] number of days to return in the forecast (used only in dailyForecast alias for cnt)
- * @property {String|Number} [hours] number of hours to return in the forecast (used only in forecast alias for cnt)
+ * @property {String} [country] optional 2 letter country code to use in the query e.g. 'en'
+ * @property {String|Number} [days] optional number of days to return in the forecast (used in dailyForecast alias for cnt)
+ * @property {String|Number} [hours] optional number of hours to return in the forecast (used in forecast alias for cnt)
  */
 
 /**
@@ -172,19 +172,19 @@ module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
  * @global
  * @description an object of parameters used to identify a location using a citys name
  * @property {Coordinate} coordinates a coordinate object used for searching based on latlon (use on its own)
- * @property {String|Number} [days] number of days to return in the forecast (used only in dailyForecast alias for cnt)
- * @property {String|Number} [hours] number of hours to return in the forecast (used only in forecast alias for cnt)
+ * @property {String|Number} [days] optional number of days to return in the forecast (used in dailyForecast alias for cnt)
+ * @property {String|Number} [hours] optional number of hours to return in the forecast (used in forecast alias for cnt)
  */
 
 /**
  * @typedef {Object} ZipReqParams
  * @global
  * @description an object of parameters used to identify a location using a citys name
- * @property {String|Number} [zip] the zip code to use within the query (US by default unless country is specified)
- * @property {String|Number} [postcode] an alias to zip
- * @property {String} [country] the 2 letter country code to use in the query e.g. 'en'
- * @property {String|Number} [days] number of days to return in the forecast (used only in dailyForecast alias for cnt)
- * @property {String|Number} [hours] number of hours to return in the forecast (used only in forecast alias for cnt)
+ * @property {String|Number} zip the zip code to use within the query (US by default unless country is specified)
+ * @property {String|Number} postcode an alias to zip (use either zip or postcode)
+ * @property {String} [country] optional 2 letter country code to use in the query e.g. 'en'
+ * @property {String|Number} [days] optional number of days to return in the forecast (used in dailyForecast alias for cnt)
+ * @property {String|Number} [hours] optional number of hours to return in the forecast (used in forecast alias for cnt)
  */
 
  /**
