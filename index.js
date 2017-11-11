@@ -148,6 +148,8 @@ function parseParameters(params) {
 
 
 module.exports = mix(OpenWeatherMap).with(WeatherMixin, UVIndexMixin);
+module.exports.OpenWeatherMap = mix(OpenWeatherMap).with(WeatherMixin, UVIndexMixin);
+
 module.exports.Weather = mix(OpenWeatherMap).with(WeatherMixin);
 module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
 

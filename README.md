@@ -43,8 +43,7 @@ const client = new Weather({
   apiKey: '{yourAPPIDFromopenweathermap.org}'
 });
 ```
-
-If you have imported all of the apis into a single object then you will have full access to all methods as if you had imported only a single one.
+The available APIs are listed in the [API Docs Page](./docs/api.md#module_OpenWeatherMap/api) as all of the static members of the module. If however you have imported all of the apis into a single object then you will have full access to all methods as if you had imported only a single one.
 
 ## api documentation
 
