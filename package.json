@@ -32,7 +32,10 @@
     "eslint-plugin-import": "^2.8.0",
     "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
-    "jsdoc-to-markdown": "^3.0.1"
+    "jsdoc-to-markdown": "^3.0.1",
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1"
   },
   "main": "./index.js",
   "engines": {
@@ -46,9 +49,6 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
-    "chai": "^4.1.2",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.1",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   },

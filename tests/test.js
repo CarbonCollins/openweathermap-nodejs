@@ -13,7 +13,13 @@ Promise.resolve()
   .then((suite) => { return fullSuite.addSuite(suite); })
   // .then(() => { return apiUnitTests(); })
   // .then((suite) => { return fullSuite.addSuite(suite); })
-  .then(() => { return mocha.run(); })
+  .then(() => {
+    return mocha.run((failures) => {
+      process.on('exit', () => {
+        process.exit(failures);
+      });
+    });
+  })
   .catch((err) => {
     console.error(err);
   });
