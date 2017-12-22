@@ -27,14 +27,15 @@
   "homepage": "https://carboncollins.uk/npm/openweathermap-nodejs",
   "devDependencies": {
     "babel-eslint": "^8.0.2",
-    "eslint": "^4.10.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
-    "jsdoc-to-markdown": "^3.0.1",
-    "chai": "^4.1.2",
     "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^3.0.1",
     "mocha": "^4.0.1"
   },
   "main": "./index.js",
