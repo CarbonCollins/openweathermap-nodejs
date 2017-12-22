@@ -30,7 +30,7 @@
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "fs-extra": "^4.0.2",
+    "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
     "jsdoc-to-markdown": "^3.0.1"
   },
