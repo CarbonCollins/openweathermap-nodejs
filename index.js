@@ -27,11 +27,11 @@ class OpenWeatherMap {
    * @param {String} [options.hostname=api.openweathermap.org] an optional hostname for the api to connect to.
    * @param {String|Number} [options.port=80] an optional port to use for the api
    */
-  constructor(options) {
+  constructor(options = {}) {
     this.apiKey = options.apiKey || '';
     this.language = options.language || undefined;
     this.hostname = options.hostname || 'api.openweathermap.org';
-    this.port = `${options.port}` || '80';
+    this.port = `${options.port || 80}`;
   }
 
   /**

@@ -46,6 +46,7 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
+    "chai": "^4.1.2",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "request": "^2.83.0",
