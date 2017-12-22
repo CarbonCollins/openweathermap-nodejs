@@ -105,41 +105,37 @@ class MixinBuilder {
  * @returns {Object} returns a query object with the correct formatting when sending the search query
  * @private
  */
-function parseParameters(params) {
+function parseParameters(params = {}) {
   const finalParams = {};
 
   // by city ID (prefered)
-  if (params.id && params.id !== '') {
+  if (params.id) {
     finalParams.id = `${params.id}`;
 
   // by city name and country
-  } else if (params.city && params.city !== ''
-      && params.country && params.country !== '') {
+  } else if (params.city && params.country) {
     finalParams.q = `${params.city},${params.country}`;
 
   // by just city name
-  } else if (params.city && params.city !== '') {
+  } else if (params.city) {
     finalParams.q = `${params.city}`;
 
   // by lat long
-  } else if (params.coordinates
-      && params.coordinates.latitude && params.coordinates.latitude !== ''
-      && params.coordinates.longitude && params.coordinates.longitude !== '') {
+  } else if (params.coordinates && params.coordinates.latitude && params.coordinates.longitude) {
     finalParams.lat = `${params.coordinates.latitude}`;
     finalParams.lon = `${params.coordinates.longitude}`;
 
   // by zip and country
-  } else if (((params.zip && params.zip !== '') || (params.postcode && params.postcode !== ''))
-      && params.country && params.country !== '') {
+  } else if ((params.zip || params.postcode) && params.country) {
     finalParams.zip = `${params.zip || params.postcode},${params.country}`;
 
   // just by zip code (USA only)
-  } else if ((params.zip && params.zip !== '') || (params.postcode && params.postcode !== '')) {
+  } else if (params.zip || params.postcode) {
     finalParams.zip = `${params.zip || params.postcode}`;
   }
 
   // an optional days limit (only used on dailyForecast)
-  if ((params.days && params.days !== '') || (params.hours && params.hours !== '')) {
+  if (params.days || params.hours) {
     finalParams.cnt = `${params.days || params.hours}`;
   }
 
