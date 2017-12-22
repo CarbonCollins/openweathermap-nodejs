@@ -6,12 +6,16 @@
     "openweathermap",
     "openweathermap.org",
     "openweather",
-    "API"
+    "api"
   ],
-  "version": "1.2.2",
+  "version": "2.0.0",
   "author": {
     "name": "Steven Collins",
-    "email": "steven@carboncollins.uk"
+    "email": "steven@carboncollins.uk",
+    "url": "https://carboncollins.uk"
+  },
+  "scripts": {
+    "test": "istanbul cover ./tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -20,17 +24,19 @@
   "bugs": {
     "url": "https://github.com/CarbonCollins/openweathermap-nodejs/issues"
   },
+  "homepage": "https://carboncollins.uk/npm/openweathermap-nodejs",
   "devDependencies": {
     "babel-eslint": "^8.0.2",
     "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "fs-extra": "^4.0.2",
     "gulp": "^3.9.1",
     "jsdoc-to-markdown": "^3.0.1"
   },
   "main": "./index.js",
-  "homepage": "https://github.com/CarbonCollins/openweathermap-nodejs",
   "engines": {
-    "node": ">=4.x"
+    "node": ">=6.x"
   },
   "licenses": [
     {
@@ -40,7 +46,17 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib",
+    "test": "./tests"
   }
 }

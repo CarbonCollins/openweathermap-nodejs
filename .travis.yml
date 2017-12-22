@@ -1,0 +1,40 @@
+language: node_js
+matrix:
+  include:
+  - node_js: '6'
+    env:
+    - UNIT=test
+  - node_js: '7'
+    env:
+    - UNIT=test
+  - node_js: '8'
+    env:
+    - UNIT=test
+  - node_js: '9'
+    env:
+    - UNIT=test
+  - node_js: node
+    env:
+    - UNIT=test
+script:
+- npm run $UNIT
+env:
+  global:
+  - NODE_ENV=testing
+  - secure: Dq2jMAup/Wmohw+3gIlifGnX7vDw55WC1rtKlwn8K+yQ8JirgBxYqM4Wn26GS6O9H85xynYy20shwGA9onaA98vPFikguD/a6kgYq+PSbpaon3gzz+Ohqcdi4Ebq8fSbSXgO9lB8Dn9QohvqzHRmTkO+EvORBT/Ey67LOjxXCzm2uoyLYubFx/t8s7kGkw8ksSFWcOhgE15liCPs5XABalrjEY48a/3iutEnxzMKSU10OKdWDtdhOGE1yPBKajT8td4jatI7iyVteIjBFjXuciH9s6kZUivWpOlhyWx44FWUhb+D/M4S1ApfUHo3i197EAS2X7/MUPI6TsL0CiHeyNFlBX2LteHW7c3uKD2MpcRTnIzK9+g3x16CleWWPn7+8e0uypGxaUcgJ95pXtWjYw7Mb6BSfawVfaWxwJ3uSKWT+gQN+ezuRmeovzXvNeSp/xF2melWmYZAZqLv/xabPAHvGhY1BI5YfolKhGiVChNNXy33/jrzhwNrbZwm+EXa8gpdDTsprC2ryKQWl6DUDrCHtQz+1Mz13L2w6z7MMcxeMtHvzLOkTaQ1qbQlsrvo3fwUh4P757mmnXWC66ne5h2rIXaOn7yZBZDYVQbEsVn/o9Vba+wyNjlrjvKtCUTJWdkUNuxlpOLDASb489DuLaIZKPagWP1i0im7BPkShKs=
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+notifications: 
+deploy:
+  provider: npm
+  email:
+    secure: lzrO9icBs47SokNicH65R6uDq0RCDeF7CySrDFic7knDX7dHuRUHzxv/btJw+dw4SYQDiJZk7TgQdJJ54+cVhn8UqD+ROzdg4rROex/1NbK7YK/ACF9G+NYzhLRae97CIu7s/AnOwruhcpZ2hdPKPRbgbPjf4cReiNnAYN/FuQXQmtEhuO4+XOfYwPOFhGer4GeG3Unhe1tbhLcP+ndi7vbqiBasFWVV4XwDAbusSSP2PaiHNYYpPb2luYktxeJonEsA9Jd19vk2URvBUWyVRgETfg/NdKQzNC8mfNdlVKLpLr9VE1a4kq0LYrHP0+NxwST9bqUbc12afk3h53naq+rB5jtUImHUZpnFQnwVSdEwRWcYmzbhZ/6nrtwHMpmFObDZ7b0ihiKblqoY9n/YxRzjLfB5SkX1m0mx5/CnFG+GnB74hppaG+M1sIGAImgtpP6gxw3mxh8+EKIYL6+9im6rF6Rid+y6bzcmxM/fmP+BIrCAHt37fx2VE26WOXbLmELoaBLZSbYNJFcsy5/c2V3ZyCLWJbN2hHjngtoDIsMoWjDCGrnzSLnyf2MEWomLu4pcxEDpfeFEcc94f3jdsQFNUcJhrNdfOI3nMOT9fmgz0ruv//7oA+dwMotNSbbgfPuz+vs1z58mrKGdED8Y2TD4Ipb5YCVSVuIZH2Bbd5s=
+  api_key:
+    secure: ULH+M5NJT4sMr9CzBaQjlz3CybKRcCGdWSLsR+n3OQdIzIMpSL0BiF90s9QrIPv/12piUf+r9BHtAQ6ABGO6rEOBfaNkI99YNc1dO+1n4tVnN/GTE2S6tZGUesgihSTrZvZKSUIGl7OkqhOG1zcUpBU71rjR7CF9ExIEIVvDBb1dUEhdufbO8RD+yTb2AWAPjVbJNrbM1Yqy8UaGoKNjT6LhnczxAB736c50KHCnTtz7P0rl2fcZwJ62Qmv9V5k1ZFpMODasEV5HupFFngO0OhVLuJsjHwwH6ZKwROVGoZgXudz7OTTyXLYDcKO2PeZzAkgWOOpVeGVq5pbzj7yoX1E6+gOTxxNHtbAiS9T/ffwZvIQ0CfSKDO3LF5xunswJa+qzWtTD/r2tHiAos+Ug/8ljo1UxZ3d9FhaKhoMgI3Uauh5szK0tD9PkbXE6wvIa3sXjEQ0FsyMuU7AS1CB1qa3dUVCFNGLtvUiF2nasl1S353FfU857Lm4pr0CfmQH5Y8Z7iu3QF2NNyg1xRNZnLRS7TLvkWsP449L/NTn66vCC1qCXTPj8Fy/OkMEiHsSEZnouVH262QKs5xGg1EXsL63EA+VSx+xl+bnwnPtbwwkfoAMgdmc8Rk+7GOppEwJcMWwtm4ysQt2Kjfsq6nruBpmiIY4HZyeslocZYzpghMI=
+  on:
+    tags: true

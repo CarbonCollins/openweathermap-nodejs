@@ -5,6 +5,9 @@
 [![GitHub release](https://img.shields.io/github/release/CarbonCollins/openweathermap-nodejs/all.svg?style=flat-square)]()
 [![David](https://img.shields.io/david/CarbonCollins/openweathermap-nodejs.svg?style=flat-square)]()
 [![David](https://img.shields.io/david/dev/CarbonCollins/openweathermap-nodejs.svg?style=flat-square)]()
+[![Maintainability](https://api.codeclimate.com/v1/badges/43a787592df39cb2fb44/maintainability)](https://codeclimate.com/github/CarbonCollins/openweathermap-nodejs/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/43a787592df39cb2fb44/test_coverage)](https://codeclimate.com/github/CarbonCollins/openweathermap-nodejs/test_coverage)
+[![Known Vulnerabilities](https://snyk.io/test/github/carboncollins/openweathermap-nodejs/badge.svg)](https://snyk.io/test/github/carboncollins/openweathermap-nodejs)
 
 An abstraction layer for the (openweathermap.org) APIs.
 
