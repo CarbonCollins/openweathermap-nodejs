@@ -195,7 +195,7 @@ module.exports = () => {
                 .match(/\[(GET|POST|PUT|HEAD|DELETE|OPTIONS)\]/)[1];
               const MUTT = new OpenWeatherMap.OpenWeatherMap({
                 apiKey: serverValidKey,
-                hostname: serverAddress,
+                host: serverAddress,
                 port: serverPort
               });
               serverEmitter.once('receivedRequest', (payload) => {

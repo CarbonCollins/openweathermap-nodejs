@@ -22,9 +22,9 @@ const endpointSuite = new Suite('Endpoint tests');
 endpointSuite.addTest(new Test('endpoint defaults to openweathermap.org api url', (done) => {
   try {
     const owm = new OpenWeatherMap.OpenWeatherMap({ apiKey: 'noApiToken' });
-    expect(owm.hostname).to.exist;
-    expect(owm.hostname).to.be.an('string', 'host should be a URL string');
-    expect(owm.hostname).to.be.equal('api.openweathermap.org', 'host URL should be "api.openweathermap.org"');
+    expect(owm.host).to.exist;
+    expect(owm.host).to.be.an('string', 'host should be a URL string');
+    expect(owm.host).to.be.equal('api.openweathermap.org', 'host URL should be "api.openweathermap.org"');
     expect(owm.port).to.exist;
     expect(owm.port).to.be.an('string', 'port should be a port string');
     expect(owm.port).to.be.equal('80', 'port default should be "80"');
@@ -35,10 +35,10 @@ endpointSuite.addTest(new Test('endpoint defaults to openweathermap.org api url'
 }));
 endpointSuite.addTest(new Test('custom host correctly defined', (done) => {
   try {
-    const owm = new OpenWeatherMap.OpenWeatherMap({ apiKey: 'noApiToken', hostname: 'test' });
-    expect(owm.hostname).to.exist;
-    expect(owm.hostname).to.be.an('string', 'host should be a URL string');
-    expect(owm.hostname).to.be.equal('test', 'host URL should be "test"');
+    const owm = new OpenWeatherMap.OpenWeatherMap({ apiKey: 'noApiToken', host: 'test' });
+    expect(owm.host).to.exist;
+    expect(owm.host).to.be.an('string', 'host should be a URL string');
+    expect(owm.host).to.be.equal('test', 'host URL should be "test"');
     expect(owm.port).to.exist;
     expect(owm.port).to.be.an('string', 'port should be a port string');
     expect(owm.port).to.be.equal('80', 'port default should be "80"');
@@ -50,9 +50,9 @@ endpointSuite.addTest(new Test('custom host correctly defined', (done) => {
 endpointSuite.addTest(new Test('custom port correctly defined', (done) => {
   try {
     const owm = new OpenWeatherMap.OpenWeatherMap({ apiKey: 'noApiToken', port: 1234 });
-    expect(owm.hostname).to.exist;
-    expect(owm.hostname).to.be.an('string', 'host should be a URL string');
-    expect(owm.hostname).to.be.equal('api.openweathermap.org', 'host URL should be "api.openweathermap.org"');
+    expect(owm.host).to.exist;
+    expect(owm.host).to.be.an('string', 'host should be a URL string');
+    expect(owm.host).to.be.equal('api.openweathermap.org', 'host URL should be "api.openweathermap.org"');
     expect(owm.port).to.exist;
     expect(owm.port).to.be.an('string', 'port should be a port string');
     expect(owm.port).to.be.equal('1234', 'port default should be "1234"');

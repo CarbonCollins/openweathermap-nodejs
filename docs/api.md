@@ -2,7 +2,8 @@
 
 <dl>
 <dt><a href="#module_OpenWeatherMap/api">OpenWeatherMap/api</a></dt>
-<dd><p>The OpenWeatherMap/api module acts as an abstraction layer for accessing the various OpenWeatherMap APIs.</p>
+<dd><p>The OpenWeatherMap/api module acts as an abstraction layer for accessing the
+various OpenWeatherMap APIs.</p>
 </dd>
 </dl>
 
@@ -29,7 +30,8 @@
 <a name="module_OpenWeatherMap/api"></a>
 
 ## OpenWeatherMap/api
-The OpenWeatherMap/api module acts as an abstraction layer for accessing the various OpenWeatherMap APIs.
+The OpenWeatherMap/api module acts as an abstraction layer for accessing the
+various OpenWeatherMap APIs.
 
 **See**: [https://openweathermap.org/api](https://openweathermap.org/api)  
 
@@ -52,7 +54,9 @@ The OpenWeatherMap/api module acts as an abstraction layer for accessing the var
 <a name="new_module_OpenWeatherMap/api.OpenWeatherMap_new"></a>
 
 #### new OpenWeatherMap(options)
-contains the core functionality between all of the APIs such as request functions and key storage.This class is intended to be extended or have mixins applied to add the functionality of the different APIs
+contains the core functionality between all of the APIs such as request functions and
+key storage. This class is intended to be extended or have mixins applied to add the
+functionality of the different APIs
 
 
 | Param | Type | Default | Description |
@@ -60,7 +64,7 @@ contains the core functionality between all of the APIs such as request function
 | options | <code>Object</code> |  |  |
 | options.apiKey | <code>String</code> |  | the APPID supplied by openweathermap.org |
 | [options.language] | <code>String</code> |  | an optional 2 letter language code e.g. 'en' |
-| [options.hostname] | <code>String</code> | <code>api.openweathermap.org</code> | an optional hostname for the api to connect to. |
+| [options.host] | <code>String</code> | <code>api.openweathermap.org</code> | an optional hostname for the api to connect to. |
 | [options.port] | <code>String</code> \| <code>Number</code> | <code>80</code> | an optional port to use for the api |
 
 <a name="module_OpenWeatherMap/api.UVIndex"></a>
@@ -77,15 +81,18 @@ contains the core functionality between all of the APIs such as request function
 <a name="new_module_OpenWeatherMap/api.UVIndex_new"></a>
 
 #### new UVIndex()
-A collection of UV Index APIs provided by openweathermap.org.Additional constructor options can be found in the [OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
+A collection of UV Index APIs provided by openweathermap.org.
+Additional constructor options can be found in the [GET]
+[OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
 
 <a name="module_OpenWeatherMap/api.UVIndex..UVIndex"></a>
 
 #### UVIndex~UVIndex(params) ⇒ <code>Promise</code>
-gets the current UV Index at a location at the current time
+gets the current UV Index at a location at the current time [GET]
 
 **Kind**: inner method of [<code>UVIndex</code>](#module_OpenWeatherMap/api.UVIndex)  
-**Returns**: <code>Promise</code> - the http request promise which will resolve with the current weather or reject with an error  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the current weather or
+reject with an error  
 **Access**: public  
 **See**: [https://openweathermap.org/current](https://openweathermap.org/current)  
 
@@ -109,7 +116,9 @@ gets the current UV Index at a location at the current time
 <a name="new_module_OpenWeatherMap/api.Weather_new"></a>
 
 #### new Weather(options)
-A collection of Weather APIs provided by openweathermap.org.Additional constructor options can be found in the [OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
+A collection of Weather APIs provided by openweathermap.org.
+Additional constructor options can be found in the
+[OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
 
 
 | Param | Type | Description |
@@ -120,10 +129,11 @@ A collection of Weather APIs provided by openweathermap.org.Additional construc
 <a name="module_OpenWeatherMap/api.Weather..now"></a>
 
 #### Weather~now(params) ⇒ <code>Promise</code>
-gets the current weather at a location at the current time
+gets the current weather at a location at the current time [GET]
 
 **Kind**: inner method of [<code>Weather</code>](#module_OpenWeatherMap/api.Weather)  
-**Returns**: <code>Promise</code> - the http request promise which will resolve with the current weather or reject with an error  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the current weather
+or reject with an error  
 **Access**: public  
 **See**: [https://openweathermap.org/current](https://openweathermap.org/current)  
 
@@ -134,10 +144,11 @@ gets the current weather at a location at the current time
 <a name="module_OpenWeatherMap/api.Weather..forecast"></a>
 
 #### Weather~forecast(params) ⇒ <code>Promise</code>
-gets a forecast for the next 5 days in 3 hour intervals
+gets a forecast for the next 5 days in 3 hour intervals [GET]
 
 **Kind**: inner method of [<code>Weather</code>](#module_OpenWeatherMap/api.Weather)  
-**Returns**: <code>Promise</code> - the http request promise which will resolve with the 5 day forecast weather or reject with an error  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the 5 day forecast
+weather or reject with an error  
 **Access**: public  
 **See**: [https://openweathermap.org/forecast5](https://openweathermap.org/forecast5)  
 
@@ -148,10 +159,11 @@ gets a forecast for the next 5 days in 3 hour intervals
 <a name="module_OpenWeatherMap/api.Weather..dailyForecast"></a>
 
 #### Weather~dailyForecast(params) ⇒ <code>Promise</code>
-gets a daily forecast for up to 16 days in the future (paid accounts only)
+gets a daily forecast for up to 16 days in the future (paid accounts only) [GET]
 
 **Kind**: inner method of [<code>Weather</code>](#module_OpenWeatherMap/api.Weather)  
-**Returns**: <code>Promise</code> - the http request promise which will resolve with the 16 day forecast weather or reject with an error  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the 16 day forecast
+weather or reject with an error  
 **Access**: public  
 **See**: [https://openweathermap.org/forecast16](https://openweathermap.org/forecast16)  
 

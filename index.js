@@ -59,14 +59,14 @@ class OpenWeatherMap {
    * @param {Object} options
    * @param {String} options.apiKey the APPID supplied by openweathermap.org
    * @param {String} [options.language] an optional 2 letter language code e.g. 'en'
-   * @param {String} [options.hostname=api.openweathermap.org] an optional hostname for the api
+   * @param {String} [options.host=api.openweathermap.org] an optional hostname for the api
    * to connect to.
    * @param {String|Number} [options.port=80] an optional port to use for the api
    */
   constructor(options = {}) {
     this.apiKey = options.apiKey || '';
     this.language = options.language || undefined;
-    this.hostname = options.hostname || 'api.openweathermap.org';
+    this.host = options.host || 'api.openweathermap.org';
     this.port = `${options.port || 80}`;
   }
 
@@ -80,7 +80,7 @@ class OpenWeatherMap {
    */
   sendRequest(uri, params) {
     const options = {
-      uri: `http://${this.hostname}:${this.port}${uri}`,
+      uri: `http://${this.host}:${this.port}${uri}`,
       qs: Object.assign(
         {
           APPID: `${this.apiKey}`,
