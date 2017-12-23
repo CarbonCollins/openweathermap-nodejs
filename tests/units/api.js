@@ -47,6 +47,8 @@ function generateArgsFromParams(params) {
             return 5;
           case 'Object':
             return { test: true };
+          case 'CityIDReqParams':
+            return { id: 'London' };
           default:
             return null;
         }
@@ -193,11 +195,12 @@ module.exports = () => {
                 .match(/\[(GET|POST|PUT|HEAD|DELETE|OPTIONS)\]/)[1];
               const MUTT = new OpenWeatherMap.OpenWeatherMap({
                 apiKey: serverValidKey,
-                hostname: serverHost,
+                hostname: serverAddress,
                 port: serverPort
               });
               serverEmitter.once('receivedRequest', (payload) => {
-                expect(payload.req.headers).to.deep.include({ authorization: 'Bearer validKey' });
+                expect(payload.req.headers).to.deep.include({ accept: 'application/json' });
+                expect(payload.params).to.include.keys(['APPID']);
                 expect(payload.req.method).to.be.equal(methodType);
                 done();
               });

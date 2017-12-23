@@ -80,7 +80,7 @@ class OpenWeatherMap {
    */
   sendRequest(uri, params) {
     const options = {
-      uri: `http://${this.hostname}${uri}`,
+      uri: `http://${this.hostname}:${this.port}${uri}`,
       qs: Object.assign(
         {
           APPID: `${this.apiKey}`,
