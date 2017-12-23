@@ -23,38 +23,21 @@ const UVIndexMixin = require('./lib/uvIndex');
  * @private
  */
 function parseParameters(params = {}) {
-  const finalParams = {};
+  const query = (params.city && params.country)
+    ? `${params.city},${params.country}`
+    : `${params.city}`;
+  const zip = ((params.zip || params.postcode) && params.country)
+    ? `${params.zip || params.postcode},${params.country}`
+    : `${params.zip || params.postcode}`;
 
-  // by city ID (prefered)
-  if (params.id) {
-    finalParams.id = `${params.id}`;
-
-    // by city name and country
-  } else if (params.city && params.country) {
-    finalParams.q = `${params.city},${params.country}`;
-
-    // by just city name
-  } else if (params.city) {
-    finalParams.q = `${params.city}`;
-
-    // by lat long
-  } else if (params.coordinates && params.coordinates.latitude && params.coordinates.longitude) {
-    finalParams.lat = `${params.coordinates.latitude}`;
-    finalParams.lon = `${params.coordinates.longitude}`;
-
-    // by zip and country
-  } else if ((params.zip || params.postcode) && params.country) {
-    finalParams.zip = `${params.zip || params.postcode},${params.country}`;
-
-    // just by zip code (USA only)
-  } else if (params.zip || params.postcode) {
-    finalParams.zip = `${params.zip || params.postcode}`;
-  }
-
-  // an optional days limit (only used on dailyForecast)
-  if (params.days || params.hours) {
-    finalParams.cnt = `${params.days || params.hours}`;
-  }
+  const finalParams = {
+    id: (params.id) ? `${params.id}` : undefined,
+    q: (query !== '') ? query : undefined,
+    lat: (params.coordinates && params.coordinates.latitude) ? `${params.coordinates.latitude}` : undefined,
+    lon: (params.coordinates && params.coordinates.longitude) ? `${params.coordinates.longitude}` : undefined,
+    zip: (zip !== '') ? zip : undefined,
+    cnt: (params.days || params.hours) ? `${params.days || params.hours}` : undefined
+  };
 
   return finalParams;
 }
