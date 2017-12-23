@@ -33,8 +33,12 @@ function parseParameters(params = {}) {
   const finalParams = {
     id: (params.id) ? `${params.id}` : undefined,
     q: (query !== '') ? query : undefined,
-    lat: (params.coordinates && params.coordinates.latitude) ? `${params.coordinates.latitude}` : undefined,
-    lon: (params.coordinates && params.coordinates.longitude) ? `${params.coordinates.longitude}` : undefined,
+    lat: (params.coordinates && params.coordinates.latitude)
+      ? `${params.coordinates.latitude}`
+      : undefined,
+    lon: (params.coordinates && params.coordinates.longitude)
+      ? `${params.coordinates.longitude}`
+      : undefined,
     zip: (zip !== '') ? zip : undefined,
     cnt: (params.days || params.hours) ? `${params.days || params.hours}` : undefined
   };

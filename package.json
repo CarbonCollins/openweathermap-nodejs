@@ -36,7 +36,9 @@
     "gulp": "^3.9.1",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^3.0.1",
-    "mocha": "^4.0.1"
+    "jsdoc-x": "^2.0.1",
+    "mocha": "^4.0.1",
+    "querystring": "^0.2.0"
   },
   "main": "./index.js",
   "engines": {
