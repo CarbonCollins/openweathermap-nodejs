@@ -25,6 +25,12 @@ various OpenWeatherMap APIs.</p>
 <dt><a href="#Coordinate">Coordinate</a> : <code>Object</code></dt>
 <dd><p>a coordinate object containing a longitute and latitude for positioning</p>
 </dd>
+<dt><a href="#PartialDate">PartialDate</a> : <code>Object</code></dt>
+<dd><p>an object containign partial date time data</p>
+</dd>
+<dt><a href="#PollutionParams">PollutionParams</a> : <code>Object</code></dt>
+<dd><p>an object of parameters used in the pollution apis</p>
+</dd>
 </dl>
 
 <a name="module_OpenWeatherMap/api"></a>
@@ -38,6 +44,12 @@ various OpenWeatherMap APIs.
 * [OpenWeatherMap/api](#module_OpenWeatherMap/api)
     * [.OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap)
         * [new OpenWeatherMap(options)](#new_module_OpenWeatherMap/api.OpenWeatherMap_new)
+    * [.AirPollution](#module_OpenWeatherMap/api.AirPollution) ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
+        * [new AirPollution()](#new_module_OpenWeatherMap/api.AirPollution_new)
+        * [~carbonMonoxide(params)](#module_OpenWeatherMap/api.AirPollution..carbonMonoxide) ⇒ <code>Promise</code>
+        * [~ozone(params)](#module_OpenWeatherMap/api.AirPollution..ozone) ⇒ <code>Promise</code>
+        * [~sulfurDioxide(params)](#module_OpenWeatherMap/api.AirPollution..sulfurDioxide) ⇒ <code>Promise</code>
+        * [~nitrogenDioxide(params)](#module_OpenWeatherMap/api.AirPollution..nitrogenDioxide) ⇒ <code>Promise</code>
     * [.UVIndex](#module_OpenWeatherMap/api.UVIndex) ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
         * [new UVIndex()](#new_module_OpenWeatherMap/api.UVIndex_new)
         * [~UVIndex(params)](#module_OpenWeatherMap/api.UVIndex..UVIndex) ⇒ <code>Promise</code>
@@ -66,6 +78,87 @@ functionality of the different APIs
 | [options.language] | <code>String</code> |  | an optional 2 letter language code e.g. 'en' |
 | [options.host] | <code>String</code> | <code>api.openweathermap.org</code> | an optional hostname for the api to connect to. |
 | [options.port] | <code>String</code> \| <code>Number</code> | <code>80</code> | an optional port to use for the api |
+
+<a name="module_OpenWeatherMap/api.AirPollution"></a>
+
+### OpenWeatherMap/api.AirPollution ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
+**Kind**: static class of [<code>OpenWeatherMap/api</code>](#module_OpenWeatherMap/api)  
+**Extends**: [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)  
+**See**: [https://openweathermap.org/](https://openweathermap.org/)  
+
+* [.AirPollution](#module_OpenWeatherMap/api.AirPollution) ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
+    * [new AirPollution()](#new_module_OpenWeatherMap/api.AirPollution_new)
+    * [~carbonMonoxide(params)](#module_OpenWeatherMap/api.AirPollution..carbonMonoxide) ⇒ <code>Promise</code>
+    * [~ozone(params)](#module_OpenWeatherMap/api.AirPollution..ozone) ⇒ <code>Promise</code>
+    * [~sulfurDioxide(params)](#module_OpenWeatherMap/api.AirPollution..sulfurDioxide) ⇒ <code>Promise</code>
+    * [~nitrogenDioxide(params)](#module_OpenWeatherMap/api.AirPollution..nitrogenDioxide) ⇒ <code>Promise</code>
+
+<a name="new_module_OpenWeatherMap/api.AirPollution_new"></a>
+
+#### new AirPollution()
+A collection of air pollution APIs provided by openweathermap.org.
+Additional constructor options can be found in the [GET]
+[OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
+
+<a name="module_OpenWeatherMap/api.AirPollution..carbonMonoxide"></a>
+
+#### AirPollution~carbonMonoxide(params) ⇒ <code>Promise</code>
+gets the carbon monoxide polution levels at a location and datetime [GET]
+
+**Kind**: inner method of [<code>AirPollution</code>](#module_OpenWeatherMap/api.AirPollution)  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the carbon monoxide data
+or reject with an error  
+**Access**: public  
+**See**: [https://openweathermap.org/api/pollution/co](https://openweathermap.org/api/pollution/co)  
+
+| Param | Type |
+| --- | --- |
+| params | [<code>PollutionParams</code>](#PollutionParams) | 
+
+<a name="module_OpenWeatherMap/api.AirPollution..ozone"></a>
+
+#### AirPollution~ozone(params) ⇒ <code>Promise</code>
+gets the current ozone thickness at a location and datetime [GET]
+
+**Kind**: inner method of [<code>AirPollution</code>](#module_OpenWeatherMap/api.AirPollution)  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the carbon monoxide data
+or reject with an error  
+**Access**: public  
+**See**: [https://openweathermap.org/api/pollution/o3](https://openweathermap.org/api/pollution/o3)  
+
+| Param | Type |
+| --- | --- |
+| params | [<code>PollutionParams</code>](#PollutionParams) | 
+
+<a name="module_OpenWeatherMap/api.AirPollution..sulfurDioxide"></a>
+
+#### AirPollution~sulfurDioxide(params) ⇒ <code>Promise</code>
+gets the current sulfur dioxide polution at a location and datetime [GET]
+
+**Kind**: inner method of [<code>AirPollution</code>](#module_OpenWeatherMap/api.AirPollution)  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the sulfur dioxide data
+or reject with an error  
+**Access**: public  
+**See**: [https://openweathermap.org/api/pollution/so2](https://openweathermap.org/api/pollution/so2)  
+
+| Param | Type |
+| --- | --- |
+| params | [<code>PollutionParams</code>](#PollutionParams) | 
+
+<a name="module_OpenWeatherMap/api.AirPollution..nitrogenDioxide"></a>
+
+#### AirPollution~nitrogenDioxide(params) ⇒ <code>Promise</code>
+gets the current nitrogen dioxide polution at a location and datetime [GET]
+
+**Kind**: inner method of [<code>AirPollution</code>](#module_OpenWeatherMap/api.AirPollution)  
+**Returns**: <code>Promise</code> - the http request promise which will resolve with the nitrogen dioxide
+data or reject with an error  
+**Access**: public  
+**See**: [https://openweathermap.org/api/pollution/no2](https://openweathermap.org/api/pollution/no2)  
+
+| Param | Type |
+| --- | --- |
+| params | [<code>PollutionParams</code>](#PollutionParams) | 
 
 <a name="module_OpenWeatherMap/api.UVIndex"></a>
 
@@ -242,4 +335,34 @@ a coordinate object containing a longitute and latitude for positioning
 | --- | --- | --- |
 | latitude | <code>String</code> \| <code>Number</code> | the latitude of the position |
 | longitude | <code>String</code> \| <code>Number</code> | the longitude of the position |
+
+<a name="PartialDate"></a>
+
+## PartialDate : <code>Object</code>
+an object containign partial date time data
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| hour | <code>String</code> \| <code>Number</code> | 
+| month | <code>String</code> \| <code>Number</code> | 
+| day | <code>String</code> \| <code>Number</code> | 
+| hour | <code>String</code> \| <code>Number</code> | 
+| minute | <code>String</code> \| <code>Number</code> | 
+| second | <code>String</code> \| <code>Number</code> | 
+
+<a name="PollutionParams"></a>
+
+## PollutionParams : <code>Object</code>
+an object of parameters used in the pollution apis
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| coordinates | [<code>Coordinate</code>](#Coordinate) | the position to check for poillutants |
+| datetime | <code>Moment</code> \| <code>Date</code> \| [<code>PartialDate</code>](#PartialDate) \| <code>String</code> | accepts a Moment object, a native Date object, a custom PartialDate object which allows for date ranges to be defined (as per the documentation), or a manualy formatted ISO TZ time string (would recomend the other options though) |
 

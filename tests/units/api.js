@@ -6,6 +6,7 @@ const jsdocx = require('jsdoc-x');
 const http = require('http');
 const qs = require('querystring');
 const EventEmitter = require('events');
+const moment = require('moment');
 
 const { Test, Suite } = Mocha;
 const { expect } = Chai;
@@ -49,6 +50,13 @@ function generateArgsFromParams(params) {
             return { test: true };
           case 'CityIDReqParams':
             return { id: 'London' };
+          case 'Coordinate':
+            return { latitude: 51.509865, longitude: -0.118092 };
+          case 'PollutionParams':
+            return {
+              coordinates: { latitude: 51.509865, longitude: -0.118092 },
+              datetime: moment()
+            };
           default:
             return null;
         }

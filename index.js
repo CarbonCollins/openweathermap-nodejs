@@ -4,6 +4,7 @@ const request = require('request-promise-native');
 
 const WeatherMixin = require('./lib/weather');
 const UVIndexMixin = require('./lib/uvIndex');
+const AirPollutionMixin = require('./lib/airPollution');
 
 /**
  * @module OpenWeatherMap/api
@@ -133,11 +134,14 @@ const mix = (Superclass) => {
   return new MixinBuilder(Superclass);
 };
 
-module.exports = mix(OpenWeatherMap).with(WeatherMixin, UVIndexMixin);
-module.exports.OpenWeatherMap = mix(OpenWeatherMap).with(WeatherMixin, UVIndexMixin);
+const baseModule = mix(OpenWeatherMap).with(WeatherMixin, UVIndexMixin, AirPollutionMixin);
+
+module.exports = baseModule;
+module.exports.OpenWeatherMap = baseModule;
 
 module.exports.Weather = mix(OpenWeatherMap).with(WeatherMixin);
 module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
+module.exports.AirPollution = mix(OpenWeatherMap).with(AirPollutionMixin);
 
 /**
  * @typedef {Object} CityIDReqParams
@@ -196,4 +200,29 @@ module.exports.UVIndex = mix(OpenWeatherMap).with(UVIndexMixin);
  *
  * @property {String|Number} latitude the latitude of the position
  * @property {String|Number} longitude the longitude of the position
+ */
+
+/**
+ * @typedef {Object} PartialDate
+ * @global
+ * @description an object containign partial date time data
+ *
+ * @property {String|Number} hour
+ * @property {String|Number} [month]
+ * @property {String|Number} [day]
+ * @property {String|Number} [hour]
+ * @property {String|Number} [minute]
+ * @property {String|Number} [second]
+ */
+
+/**
+ * @typedef {Object} PollutionParams
+ * @global
+ * @description an object of parameters used in the pollution apis
+ *
+ * @property {Coordinate} coordinates the position to check for poillutants
+ * @property {Moment|Date|PartialDate|String} datetime accepts a Moment object, a native Date
+ * object, a custom PartialDate object which allows for date ranges to be defined (as per the
+ * documentation), or a manualy formatted ISO TZ time string (would recomend the other options
+ * though)
  */
