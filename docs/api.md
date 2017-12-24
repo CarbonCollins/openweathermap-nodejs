@@ -59,10 +59,16 @@ various OpenWeatherMap APIs.
         * [~forecast(params)](#module_OpenWeatherMap/api.Weather..forecast) ⇒ <code>Promise</code>
         * [~dailyForecast(params)](#module_OpenWeatherMap/api.Weather..dailyForecast) ⇒ <code>Promise</code>
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.OpenWeatherMap"></a>
 
 ### OpenWeatherMap/api.OpenWeatherMap
 **Kind**: static class of [<code>OpenWeatherMap/api</code>](#module_OpenWeatherMap/api)  
+
+* * *
+
 <a name="new_module_OpenWeatherMap/api.OpenWeatherMap_new"></a>
 
 #### new OpenWeatherMap(options)
@@ -79,6 +85,9 @@ functionality of the different APIs
 | [options.host] | <code>String</code> | <code>api.openweathermap.org</code> | an optional hostname for the api to connect to. |
 | [options.port] | <code>String</code> \| <code>Number</code> | <code>80</code> | an optional port to use for the api |
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.AirPollution"></a>
 
 ### OpenWeatherMap/api.AirPollution ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
@@ -93,12 +102,18 @@ functionality of the different APIs
     * [~sulfurDioxide(params)](#module_OpenWeatherMap/api.AirPollution..sulfurDioxide) ⇒ <code>Promise</code>
     * [~nitrogenDioxide(params)](#module_OpenWeatherMap/api.AirPollution..nitrogenDioxide) ⇒ <code>Promise</code>
 
+
+* * *
+
 <a name="new_module_OpenWeatherMap/api.AirPollution_new"></a>
 
 #### new AirPollution()
 A collection of air pollution APIs provided by openweathermap.org.
 Additional constructor options can be found in the [GET]
 [OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
+
+
+* * *
 
 <a name="module_OpenWeatherMap/api.AirPollution..carbonMonoxide"></a>
 
@@ -115,6 +130,9 @@ or reject with an error
 | --- | --- |
 | params | [<code>PollutionParams</code>](#PollutionParams) | 
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.AirPollution..ozone"></a>
 
 #### AirPollution~ozone(params) ⇒ <code>Promise</code>
@@ -129,6 +147,9 @@ or reject with an error
 | Param | Type |
 | --- | --- |
 | params | [<code>PollutionParams</code>](#PollutionParams) | 
+
+
+* * *
 
 <a name="module_OpenWeatherMap/api.AirPollution..sulfurDioxide"></a>
 
@@ -145,6 +166,9 @@ or reject with an error
 | --- | --- |
 | params | [<code>PollutionParams</code>](#PollutionParams) | 
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.AirPollution..nitrogenDioxide"></a>
 
 #### AirPollution~nitrogenDioxide(params) ⇒ <code>Promise</code>
@@ -160,6 +184,9 @@ data or reject with an error
 | --- | --- |
 | params | [<code>PollutionParams</code>](#PollutionParams) | 
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.UVIndex"></a>
 
 ### OpenWeatherMap/api.UVIndex ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
@@ -171,12 +198,18 @@ data or reject with an error
     * [new UVIndex()](#new_module_OpenWeatherMap/api.UVIndex_new)
     * [~UVIndex(params)](#module_OpenWeatherMap/api.UVIndex..UVIndex) ⇒ <code>Promise</code>
 
+
+* * *
+
 <a name="new_module_OpenWeatherMap/api.UVIndex_new"></a>
 
 #### new UVIndex()
 A collection of UV Index APIs provided by openweathermap.org.
 Additional constructor options can be found in the [GET]
 [OpenWeatherMap](#module_OpenWeatherMap/api.OpenWeatherMap) class
+
+
+* * *
 
 <a name="module_OpenWeatherMap/api.UVIndex..UVIndex"></a>
 
@@ -193,6 +226,9 @@ reject with an error
 | --- | --- |
 | params | [<code>CityIDReqParams</code>](#CityIDReqParams) \| [<code>CityNameReqParams</code>](#CityNameReqParams) \| [<code>LatLonReqParams</code>](#LatLonReqParams) \| [<code>ZipReqParams</code>](#ZipReqParams) | 
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.Weather"></a>
 
 ### OpenWeatherMap/api.Weather ⇐ [<code>OpenWeatherMap</code>](#module_OpenWeatherMap/api.OpenWeatherMap)
@@ -206,6 +242,9 @@ reject with an error
     * [~forecast(params)](#module_OpenWeatherMap/api.Weather..forecast) ⇒ <code>Promise</code>
     * [~dailyForecast(params)](#module_OpenWeatherMap/api.Weather..dailyForecast) ⇒ <code>Promise</code>
 
+
+* * *
+
 <a name="new_module_OpenWeatherMap/api.Weather_new"></a>
 
 #### new Weather(options)
@@ -218,6 +257,9 @@ Additional constructor options can be found in the
 | --- | --- | --- |
 | options | <code>Object</code> |  |
 | [options.units] | <code>String</code> | default uses kelvin, can also specify 'metric' for centegrade and 'imprerial' for Fahrenheit. |
+
+
+* * *
 
 <a name="module_OpenWeatherMap/api.Weather..now"></a>
 
@@ -234,6 +276,9 @@ or reject with an error
 | --- | --- |
 | params | [<code>CityIDReqParams</code>](#CityIDReqParams) \| [<code>CityNameReqParams</code>](#CityNameReqParams) \| [<code>LatLonReqParams</code>](#LatLonReqParams) \| [<code>ZipReqParams</code>](#ZipReqParams) | 
 
+
+* * *
+
 <a name="module_OpenWeatherMap/api.Weather..forecast"></a>
 
 #### Weather~forecast(params) ⇒ <code>Promise</code>
@@ -248,6 +293,9 @@ weather or reject with an error
 | Param | Type |
 | --- | --- |
 | params | [<code>CityIDReqParams</code>](#CityIDReqParams) \| [<code>CityNameReqParams</code>](#CityNameReqParams) \| [<code>LatLonReqParams</code>](#LatLonReqParams) \| [<code>ZipReqParams</code>](#ZipReqParams) | 
+
+
+* * *
 
 <a name="module_OpenWeatherMap/api.Weather..dailyForecast"></a>
 
@@ -264,6 +312,9 @@ weather or reject with an error
 | --- | --- |
 | params | [<code>CityIDReqParams</code>](#CityIDReqParams) \| [<code>CityNameReqParams</code>](#CityNameReqParams) \| [<code>LatLonReqParams</code>](#LatLonReqParams) \| [<code>ZipReqParams</code>](#ZipReqParams) | 
 
+
+* * *
+
 <a name="CityIDReqParams"></a>
 
 ## CityIDReqParams : <code>Object</code>
@@ -277,6 +328,9 @@ an object of parameters used to identify a location using a citys ID
 | id | <code>String</code> \| <code>Number</code> | the city ID to be used in the query |
 | days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
 | hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
+
+
+* * *
 
 <a name="CityNameReqParams"></a>
 
@@ -293,6 +347,9 @@ an object of parameters used to identify a location using a citys name
 | days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
 | hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
+
+* * *
+
 <a name="LatLonReqParams"></a>
 
 ## LatLonReqParams : <code>Object</code>
@@ -306,6 +363,9 @@ an object of parameters used to identify a location using a citys name
 | coordinates | [<code>Coordinate</code>](#Coordinate) | a coordinate object used for searching based on latlon (use on its own) |
 | days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
 | hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
+
+
+* * *
 
 <a name="ZipReqParams"></a>
 
@@ -323,6 +383,9 @@ an object of parameters used to identify a location using a citys name
 | days | <code>String</code> \| <code>Number</code> | optional number of days to return in the forecast (used in dailyForecast alias for cnt) |
 | hours | <code>String</code> \| <code>Number</code> | optional number of hours to return in the forecast (used in forecast alias for cnt) |
 
+
+* * *
+
 <a name="Coordinate"></a>
 
 ## Coordinate : <code>Object</code>
@@ -335,6 +398,9 @@ a coordinate object containing a longitute and latitude for positioning
 | --- | --- | --- |
 | latitude | <code>String</code> \| <code>Number</code> | the latitude of the position |
 | longitude | <code>String</code> \| <code>Number</code> | the longitude of the position |
+
+
+* * *
 
 <a name="PartialDate"></a>
 
@@ -353,6 +419,9 @@ an object containign partial date time data
 | minute | <code>String</code> \| <code>Number</code> | 
 | second | <code>String</code> \| <code>Number</code> | 
 
+
+* * *
+
 <a name="PollutionParams"></a>
 
 ## PollutionParams : <code>Object</code>
@@ -365,4 +434,7 @@ an object of parameters used in the pollution apis
 | --- | --- | --- |
 | coordinates | [<code>Coordinate</code>](#Coordinate) | the position to check for poillutants |
 | datetime | <code>Moment</code> \| <code>Date</code> \| [<code>PartialDate</code>](#PartialDate) \| <code>String</code> | accepts a Moment object, a native Date object, a custom PartialDate object which allows for date ranges to be defined (as per the documentation), or a manualy formatted ISO TZ time string (would recomend the other options though) |
+
+
+* * *
 
