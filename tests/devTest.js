@@ -20,7 +20,7 @@ open.now({ city: 'london', country: 'uk' })
   .then((forecastResult) => {
     console.log(JSON.stringify(forecastResult, null, 2));
   })
-  .catch((err) =>{
+  .catch((err) => {
     console.error(err);
   });
 

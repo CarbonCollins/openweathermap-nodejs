@@ -28,6 +28,7 @@
   "devDependencies": {
     "babel-eslint": "^8.0.2",
     "chai": "^4.1.2",
+    "diff": "^3.4.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -38,7 +39,9 @@
     "jsdoc-to-markdown": "^3.0.1",
     "jsdoc-x": "^2.0.1",
     "mocha": "^4.0.1",
-    "querystring": "^0.2.0"
+    "querystring": "^0.2.0",
+    "require": "^2.4.20",
+    "rewire": "^3.0.2"
   },
   "main": "./index.js",
   "engines": {
@@ -52,7 +55,6 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
-    "diff": "^3.4.0",
     "moment": "^2.20.1",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
