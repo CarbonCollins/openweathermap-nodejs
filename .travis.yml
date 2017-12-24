@@ -29,7 +29,9 @@ before_script:
 - "./cc-test-reporter before-build"
 after_script:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-notifications: 
+notifications:
+  slack:
+    secure: KYK8A5rn4M/fLHYwh0e1uDOpUZpAfcscx5rBF6sezWn08AOFw5dpbZVIk3igKEtQQ4HBuZkeIBP/9fNv81tOQH/VXhQanZ7OOmmKwD/yYD6X6EHlSpScQKD9VrJtk3Dfa4QZVfrztirUHM+RWymbaA+y0ERRwHPoTao9wuWujABwsXb10P3WfjMbuZ5hq9M+1Ow7gD13Ap533EVBOoBhTcHCInkEAmJbx8K6mr+0FHPd3daHWHArxZ6uSBiyiGDkZM4RQE7Gdje3CeeNUm8GOBe3L1s5za9Zp+9IRrwFQyUbUkLyIiiEGITX026e1Ee2g9iTmIblslNtCT5epZLOoXZv4TQ2KdOscimIAzvqleviOpts2BUoJWimD7vC1lypAbiGPOGME6SliPCmpgU+ct6tFZqRW7sIlmiOAI0JhJcY0adP7Hn5+uJ6ooWaIVnP4NiVNUwjhVPqf9Y9Q60dG0cTRiXm6Jtsc2TGAkGeIsrykH9+4gxjhlovIGnZ279BAUPTiBxL1CwKm2o9F4W9rGucnlcnBwzYHsmK0xwZ5+AIUUp5AXjCBzpE+1bXWkdtfKzmVCvGL+QN60t5ON5s0zL3pN/xLIayoHAPOrAUJmkIDdN9QpxC51wN5o/BZn7IW0FQ4We26V9ghOWyMe8aRjYDTivjcAZ3wPL8uGe7KjQ=
 deploy:
   provider: npm
   email:
