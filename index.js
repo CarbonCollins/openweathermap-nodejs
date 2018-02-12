@@ -33,18 +33,18 @@ function parseParameters(params = {}) {
 
   const finalParams = {
     id: (params.id) ? `${params.id}` : undefined,
-    q: (query !== '') ? query : undefined,
+    q: (query !== '' && query !== 'undefined') ? query : undefined,
     lat: (params.coordinates && params.coordinates.latitude)
       ? `${params.coordinates.latitude}`
       : undefined,
     lon: (params.coordinates && params.coordinates.longitude)
       ? `${params.coordinates.longitude}`
       : undefined,
-    zip: (zip !== '') ? zip : undefined,
+    zip: (zip !== '' && zip !== 'undefined') ? zip : undefined,
     cnt: (params.days || params.hours) ? `${params.days || params.hours}` : undefined
   };
-
-  return finalParams;
+  
+  return JSON.parse( JSON.stringify( finalParams ) );
 }
 
 /**
