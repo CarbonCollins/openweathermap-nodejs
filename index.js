@@ -7,6 +7,45 @@ const UVIndexMixin = require('./lib/uvIndex');
 const AirPollutionMixin = require('./lib/airPollution');
 
 /**
+ * @method isPopulatedString
+ * @description checks to ensure a stirng is not undefined or empty
+ * @param {String} string1 an input string to verify
+ * @param {String=} string2 an optional secondary value to also check
+ * @returns {Boolean}
+ * @private
+ */
+function isPopulatedString(string1, string2 = 'true') {
+  return (string1 !== undefined && string1 !== '' && string1 !== 'undefined'
+    && string2 !== undefined && string2 !== '' && string2 !== 'undefined');
+}
+
+/**
+ * @method joinSeperatedStrings
+ * @description joins two strings with a , seperating them or returns the first value. an example
+ * would be 'string1' and 'string2' would be joined into 'string1,string2'
+ * @param {String} string1 an input string to use
+ * @param {String=} string2 an optional input string to concatonate with a ,
+ * @returns {String}
+ * @private
+ */
+function joinSeperatedStrings(string1, string2) {
+  return (isPopulatedString(string1, string2))
+    ? `${string1},${string2}`
+    : `${string1 || ''}`;
+}
+
+/**
+ * @method stringValueOrUndefined
+ * @description returns a value converted into a string or an undefined value
+ * @param {String|Number} value a value to be converted into a string
+ * @returns {String}
+ * @private
+ */
+function stringValueOrUndefined(value) {
+  return (isPopulatedString(value)) ? `${value}` : undefined;
+}
+
+/**
  * @module OpenWeatherMap/api
  * @description The OpenWeatherMap/api module acts as an abstraction layer for accessing the
  * various OpenWeatherMap APIs.
@@ -24,27 +63,33 @@ const AirPollutionMixin = require('./lib/airPollution');
  * @private
  */
 function parseParameters(params = {}) {
-  const query = (params.city && params.country)
-    ? `${params.city},${params.country}`
-    : `${params.city}`;
-  const zip = ((params.zip || params.postcode) && params.country)
-    ? `${params.zip || params.postcode},${params.country}`
-    : `${params.zip || params.postcode}`;
+  const zipcode = (isPopulatedString(params.zip)) ? params.zip : params.postcode;
+  const cnt = (isPopulatedString(params.days)) ? params.days : params.hours;
+
+  const query = joinSeperatedStrings(params.city, params.country);
+  const zip = joinSeperatedStrings(zipcode, params.country);
 
   const finalParams = {
-    id: (params.id) ? `${params.id}` : undefined,
-    q: (query !== '' && query !== 'undefined') ? query : undefined,
-    lat: (params.coordinates && params.coordinates.latitude)
-      ? `${params.coordinates.latitude}`
+    id: stringValueOrUndefined(params.id),
+    q: stringValueOrUndefined(query),
+    lat: (typeof params.coordinates === 'object')
+      ? stringValueOrUndefined(params.coordinates.latitude)
       : undefined,
-    lon: (params.coordinates && params.coordinates.longitude)
-      ? `${params.coordinates.longitude}`
+    lon: (typeof params.coordinates === 'object')
+      ? stringValueOrUndefined(params.coordinates.longitude)
       : undefined,
-    zip: (zip !== '' && zip !== 'undefined') ? zip : undefined,
-    cnt: (params.days || params.hours) ? `${params.days || params.hours}` : undefined
+    zip: stringValueOrUndefined(zip),
+    cnt: stringValueOrUndefined(cnt)
   };
-  
-  return JSON.parse( JSON.stringify( finalParams ) );
+
+  Object.keys(finalParams)
+    .forEach((key) => {
+      if ((finalParams[key] === undefined)) {
+        delete finalParams[key];
+      }
+    });
+
+  return finalParams;
 }
 
 /**
