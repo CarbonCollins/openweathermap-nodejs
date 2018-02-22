@@ -8,12 +8,18 @@
     "openweather",
     "api"
   ],
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": {
     "name": "Steven Collins",
     "email": "steven@carboncollins.uk",
     "url": "https://carboncollins.uk"
   },
+  "contributors": [
+    {
+      "name": "Kersten Burkhardt",
+      "url": "https://github.com/kersten"
+    }
+  ],
   "scripts": {
     "test": "istanbul cover ./tests/test.js"
   },
